@@ -3,18 +3,21 @@
         "id": "1",
         "nome": "Bianca Paccola",
         "email": "bianca@labenu.com",
-        "data": "28/3/2022"
+        "data_nasc": "2022/03/28",
+        "turma_id": "1"
     },
     {
         "id": "2",
         "nome": "Samuel Garcia",
         "email": "samuel@labenu.com",
-        "data": "28/3/2022"
+        "data_nasc": "2022/03/28",
+        "turma_id": "1"
     },
     {
         "id": "3",
         "nome": "Caroline Martins",
         "email": "carol@labenu.com",
-        "data": "28/3/2022"
+        "data_nasc": "2022/03/28",
+        "turma_id": "1"
     }
 ]
