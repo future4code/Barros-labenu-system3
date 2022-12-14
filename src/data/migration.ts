@@ -11,14 +11,13 @@ const printError = (error: any) => { console.log(error.sqlMessage || error.messa
 
 const createTables = () => connection.raw(`
 
-
-CREATE TABLE turma(
-  id VARCHAR(255) PRIMARY KEY,
-  nome VARCHAR(255) NOT NULL,
-  modulo VARCHAR(255) NOT NULL DEFAULT 0
-
+  CREATE TABLE turma(
+    id VARCHAR(255) PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    modulo VARCHAR(255) NOT NULL DEFAULT 0
 );
-CREATE TABLE estudante(
+
+  CREATE TABLE estudante(
     id VARCHAR(255) PRIMARY KEY,
     nome VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL UNIQUE,
@@ -27,40 +26,41 @@ CREATE TABLE estudante(
     FOREIGN KEY(turma_id) REFERENCES turma(id)
  );
  
- CREATE TABLE hobby(
-  id VARCHAR(255) PRIMARY KEY,
-  nome VARCHAR(255) NOT NULL UNIQUE
+  CREATE TABLE hobby(
+    id VARCHAR(255) PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL UNIQUE
 );
-CREATE TABLE hobby_estudante(
-id VARCHAR(255) PRIMARY KEY,
-id_estudante VARCHAR(255) NOT NULL,
-id_hobby VARCHAR(255) NOT NULL,
-FOREIGN KEY(id_estudante) REFERENCES estudante(id),
-FOREIGN KEY(id_hobby) REFERENCES hobby(id)
+
+  CREATE TABLE hobby_estudante(
+    id VARCHAR(255) PRIMARY KEY,
+    id_estudante VARCHAR(255) NOT NULL,
+    id_hobby VARCHAR(255) NOT NULL,
+    FOREIGN KEY(id_estudante) REFERENCES estudante(id),
+    FOREIGN KEY(id_hobby) REFERENCES hobby(id)
 );
 
  CREATE TABLE docente(
-  id VARCHAR(255) PRIMARY KEY,
-  nome VARCHAR(255) NOT NULL,
-  email VARCHAR(255) NOT NULL UNIQUE,
-  data_nasc DATE NOT NULL,
-  id_turma VARCHAR(255) NOT NULL,
-  FOREIGN KEY(id_turma) REFERENCES turma(id)
+    id VARCHAR(255) PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    data_nasc DATE NOT NULL,
+    id_turma VARCHAR(255) NOT NULL,
+    FOREIGN KEY(id_turma) REFERENCES turma(id)
 );
 
 
 
-CREATE TABLE especialidade(
-  id VARCHAR(255) PRIMARY KEY,
-  nome VARCHAR(255) NOT NULL UNIQUE
+  CREATE TABLE especialidade(
+    id VARCHAR(255) PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL UNIQUE
 );
 
-CREATE TABLE docente_especialidade(
-  id VARCHAR(255) PRIMARY KEY,
-  id_docente VARCHAR(255) NOT NULL,
-  id_especialidade VARCHAR(255) NOT NULL,
-  FOREIGN KEY (id_docente) REFERENCES docente(id),
-  FOREIGN KEY (id_especialidade) REFERENCES especialidade(id)
+  CREATE TABLE docente_especialidade(
+    id VARCHAR(255) PRIMARY KEY,
+    id_docente VARCHAR(255) NOT NULL,
+    id_especialidade VARCHAR(255) NOT NULL,
+    FOREIGN KEY (id_docente) REFERENCES docente(id),
+    FOREIGN KEY (id_especialidade) REFERENCES especialidade(id)
 )
 
  `)
@@ -118,53 +118,3 @@ createTables()
   .then(insertEspecialidade)
   .then(insertEspecialidadeDocente)
   .finally(fimConeccao)
-
-//   CREATE TABLE turma(
-//     id VARCHAR(255) PRIMARY KEY,
-//     nome VARCHAR(255) NOT NULL,
-//     modulo VARCHAR(255) NOT NULL DEFAULT 0
-
-//   );
-//   CREATE TABLE estudante(
-//       id VARCHAR(255) PRIMARY KEY,
-//       nome VARCHAR(255) NOT NULL,
-//       email VARCHAR(255) NOT NULL UNIQUE,
-//       data_nasc DATE NOT NULL,
-//       turma_id VARCHAR(255) NOT NULL,
-//       FOREIGN KEY (turma_id) REFERENCES turma(id)
-//    );
-   
-//    CREATE TABLE hobby(
-//     id VARCHAR(255) PRIMARY KEY,
-//     nome VARCHAR(255) NOT NULL UNIQUE
-//  );
-
-//  CREATE TABLE hobby_estudante(
-//   id VARCHAR(255) PRIMARY KEY,
-//   id_estudante VARCHAR(255) NOT NULL,
-//   id_hooby VARCHAR(255) NOT NULL,
-//   FOREIGN KEY (id_estudante) REFERENCES estudante(id),
-//   FOREIGN KEY (id_hooby) REFERENCES hooby(id)
-// );
-
-//    CREATE TABLE docente(
-//     id VARCHAR(255) PRIMARY KEY,
-//     nome VARCHAR(255) NOT NULL,
-//     email VARCHAR(255) NOT NULL UNIQUE,
-//     data_nasc DATE NOT NULL,
-//     id_turma VARCHAR(255) NOT NULL,
-//     FOREIGN KEY (id_turma) REFERENCES turma(id)
-//   );
-
-//   CREATE TABLE especialidade(
-//     id VARCHAR(255) PRIMARY KEY,
-//     nome VARCHAR(255) NOT NULL UNIQUE
-//   );
-
-//   CREATE TABLE docente_especialidade(
-//     id VARCHAR(255) PRIMARY KEY,
-//     id_docente VARCHAR(255) NOT NULL,
-//     id_especialidade VARCHAR(255) NOT NULL,
-//     FOREIGN KEY (id_docente) REFERENCES docente(id),
-//     FOREIGN KEY (id_especialidade) REFERENCES especialidade(id)
-//   )
