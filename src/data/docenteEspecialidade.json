@@ -1,0 +1,12 @@
+[
+    {
+        "id": "1",
+        "id_docente":"2",
+        "id_especialidade":"1"
+    },
+    {
+        "id":"2",
+        "id_docente":"1",
+        "id_especialidade": "3"
+    }
+]
