@@ -18,4 +18,28 @@ export abstract class DataBasedata {
         }
 
     })
+
+
+    // incluido por Samuel 
+
+    
+    abstract TABLE_NAME : string;
+
+    public async getAll() {
+     const result = await DataBasedata.connection(
+       this.TABLE_NAME
+     ).select();
+     return result;
+   }
+
+   public async create(item: any) {
+     await DataBasedata.connection(this.TABLE_NAME).insert(item);
+   }
+
+   public async getById(id: string) {
+     const result = await DataBasedata.connection(this.TABLE_NAME)
+      .select()
+      .where({ id}) 
+      return result
+    }
 }
