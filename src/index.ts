@@ -3,6 +3,8 @@ import cors from "cors"
 import { AddressInfo } from "net";
 import { getEstudante } from "./endpoints/buscaEstudante";
 import { getPing } from "./endpoints/ping";
+import { getTurma } from "./endpoints/buscaTurmaAtiva";
+import { getDocente } from "./endpoints/buscaDocente";
 
 const app: Express = express();
 
@@ -17,7 +19,14 @@ const server = app.listen(process.env.PORT || 3003, () => {
         console.error("failure upon starting server");
     }
 })
+//endpoint DE TESTE
+app.get("/ping",getPing)
+
 // endpoint buscar estudantes
 app.get("/estudante",getEstudante)
 
-app.get("/ping",getPing)
+//ENDPOINT BUSCAR TURMA
+app.get("/turma",getTurma)
+
+//ENDPOINT BUSCAR DOCENTE
+app.get("/docente", getDocente)

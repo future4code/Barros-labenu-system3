@@ -8,7 +8,7 @@ export const getTurma = async (req: Request, res: Response) => {
         const turmaDatabase = new TurmaDatabase()
         const result = await turmaDatabase.getAll()
         res.status(200).send({ products: result })
-    } catch (error:any) {
+    } catch (error: any) {
         res.status(errorCode).send({ message: error.message })
     }
 }

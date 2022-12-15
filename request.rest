@@ -1,6 +1,14 @@
+//TESTANDOO
+GET  http://localhost:3003/ping
+
+###
+//ENDPOINT BUSCAR ESTUDANTES
 GET  http://localhost:3003/estudante
 
 ###
+//ENDPOINT BUSCAR TURMA
+GET  http://localhost:3003/turma
 
-//TESTANDOO
-GET  http://localhost:3003/ping
+###
+//ENDPOINT BUSCAR DOCENTE
+GET http://localhost:3003/docente
