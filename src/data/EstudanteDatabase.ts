@@ -8,6 +8,15 @@ export class EstudanteDatabase extends DataBasedata {
     return super.getAll()
   }
 
+  public async getAllNome(nome: string){
+    const result = await DataBasedata.connection.raw(`
+      SELECT nome 
+      FROM estudante
+      WHERE (nome like "%${nome}%");
+  `)
+    return result 
+  }
+
   public async create(estudante: Estudante) {
     await super.create(estudante)
   }

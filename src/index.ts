@@ -30,3 +30,6 @@ app.get("/turma",getTurma)
 
 //ENDPOINT BUSCAR DOCENTE
 app.get("/docente", getDocente)
+
+//ENDPOINT BUSCAR ESTUDANTE POR NOME
+app.get("/estudantes", getEstudante)

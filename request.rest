@@ -12,3 +12,6 @@ GET  http://localhost:3003/turma
 ###
 //ENDPOINT BUSCAR DOCENTE
 GET http://localhost:3003/docente
+
+###
+GET http://localhost:3003/estudantes?nome=martins
