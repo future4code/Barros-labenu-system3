@@ -10,6 +10,7 @@ GET  http://localhost:3003/estudante
 GET  http://localhost:3003/turma
 
 ###
+//ENDPOINT DE ALTERAR O MÓDULO DA TURMA
 PUT http://localhost:3003/turma/1
 Content-Type: application/json
 
@@ -20,6 +21,19 @@ Content-Type: application/json
 ###
 //ENDPOINT BUSCAR DOCENTE
 GET http://localhost:3003/docente
+
+###
+//ENDPOINT PARA CRIAR UM NOVO DOCENTE
+POST http://localhost:3003/docente
+Content-Type: application/json
+
+{
+    "nome": "Fayra Miranda",
+    "email": "fay@email.com",
+    "dataNascimento": "1999-2-15",
+    "turma_id": "2",
+    "especialidades": "1"
+}
 
 ###
 GET http://localhost:3003/estudantes?nome=martins
