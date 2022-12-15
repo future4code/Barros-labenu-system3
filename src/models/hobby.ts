@@ -1,4 +1,4 @@
-export type hobby={
+export type Hobby={
     id: string,
     nome:string
 }

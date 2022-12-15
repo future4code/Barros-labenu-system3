@@ -1,8 +1,7 @@
-export type docente ={
+export type Docente ={
     id: string,
     nome:string,
     email:string,
-    data_nasc:Date,
-    turma_id:string,
-    especialidades:string[]
+    data_nasc:string,
+    turma_id:string
 }

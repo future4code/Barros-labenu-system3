@@ -1,13 +1,6 @@
-export type especialidade={
+export type Especialidade={
     
     id: string,
-    nome: ESPECIALIDADES
+    nome: string
 }
 
-enum ESPECIALIDADES {
-    JAVASCRIPT = 'javascript',
-    TYPESCRIPT = 'typescript',
-    REACT = 'react',
-    CSS = 'css',
-    POO = 'poo'
-}
