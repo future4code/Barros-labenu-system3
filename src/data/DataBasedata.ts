@@ -36,6 +36,12 @@ export abstract class DataBasedata {
       .where({id}) 
       return result
     }
+
+    public async set(id: string, item: any) {
+      await DataBasedata.connection(this.TABLE_NAME)
+      .where({id})
+      .update(item)
+    }
 }
 
 export default DataBasedata;

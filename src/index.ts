@@ -5,6 +5,7 @@ import { getEstudante } from "./endpoints/buscaEstudante";
 import { getPing } from "./endpoints/ping";
 import { getTurma } from "./endpoints/buscaTurmaAtiva";
 import { getDocente } from "./endpoints/buscaDocente";
+import { changeTurma } from "./endpoints/MudaTurmaModulo";
 
 const app: Express = express();
 
@@ -27,6 +28,9 @@ app.get("/estudante",getEstudante)
 
 //ENDPOINT BUSCAR TURMA
 app.get("/turma",getTurma)
+
+//ENDPOINT MUDAR TURMA DE MÓDULO
+app.put("/turma/:id", changeTurma)
 
 //ENDPOINT BUSCAR DOCENTE
 app.get("/docente", getDocente)
