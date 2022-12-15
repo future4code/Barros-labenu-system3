@@ -7,7 +7,7 @@ export const getDocente = async (req: Request, res: Response) => {
 
         const docenteDatabase = new DocenteDatabase()
         const result = await docenteDatabase.getAll()
-        res.status(200).send({ products: result })
+        res.status(200).send({ docentes: result })
     } catch (error:any) {
         res.status(errorCode).send({ message: error.message })
     }
