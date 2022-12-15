@@ -1,8 +1,8 @@
 import { Estudante } from "../class/Estudante";
-import { DataBasedata } from "./DataBasedata";
+import DataBasedata from "./DataBasedata";
 
 export class EstudanteDatabase extends DataBasedata {
-  TABLE_NAME: "Labe_Users"
+  TABLE_NAME: "estudante";
  
   public async getAll() {
     return super.getAll()

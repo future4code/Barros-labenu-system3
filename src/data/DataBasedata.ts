@@ -14,15 +14,11 @@ export abstract class DataBasedata {
             password: process.env.DB_PASSWORD,
             database: process.env.DB_DATABASE,
             multipleStatements: true
-
         }
 
     })
 
-
     // incluido por Samuel 
-
-    
     abstract TABLE_NAME : string;
 
     public async getAll() {
@@ -39,7 +35,9 @@ export abstract class DataBasedata {
    public async getById(id: string) {
      const result = await DataBasedata.connection(this.TABLE_NAME)
       .select()
-      .where({ id}) 
+      .where({id}) 
       return result
     }
 }
+
+export default DataBasedata;

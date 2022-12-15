@@ -1,6 +1,8 @@
 import express, { Express } from "express";
 import cors from "cors"
 import { AddressInfo } from "net";
+import { getEstudante } from "./endpoints/buscaEstudante";
+import { getPing } from "./endpoints/ping";
 
 const app: Express = express();
 
@@ -15,3 +17,7 @@ const server = app.listen(process.env.PORT || 3003, () => {
         console.error("failure upon starting server");
     }
 })
+// endpoint buscar estudantes
+app.get("/estudante",getEstudante)
+
+app.get("/ping",getPing)
