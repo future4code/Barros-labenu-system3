@@ -1,11 +1,20 @@
 import { Estudante } from "../class/Estudante";
-import { DataBasedata } from "./DataBasedata";
+import DataBasedata from "./DataBasedata";
 
 export class EstudanteDatabase extends DataBasedata {
-  TABLE_NAME: "Labe_Users"
+  TABLE_NAME= "estudante";
  
   public async getAll() {
     return super.getAll()
+  }
+
+  public async getAllNome(nome: string){
+    const result = await DataBasedata.connection.raw(`
+      SELECT nome 
+      FROM estudante
+      WHERE (nome like "%${nome}%");
+  `)
+    return result 
   }
 
   public async create(estudante: Estudante) {

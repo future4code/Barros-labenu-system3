@@ -2,7 +2,7 @@ import { Turma } from "../class/Turma";
 import { DataBasedata } from "./DataBasedata";
 
 export class TurmaDatabase extends DataBasedata {
-  TABLE_NAME: "TURMA";
+  TABLE_NAME= "turma";
  
   public async getAll() {
     return super.getAll()
