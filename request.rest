@@ -2,8 +2,12 @@
 GET  http://localhost:3003/ping
 
 ###
-//ENDPOINT BUSCAR ESTUDANTES
+//ENDPOINT BUSCAR TODOS OS ESTUDANTES
 GET  http://localhost:3003/estudante
+
+###
+//ENDPOINT PARA BUSCAR UM ESTUDANTE POR NOME
+GET http://localhost:3003/estudante?nome=Caroline
 
 ###
 //ENDPOINT BUSCAR TURMA
@@ -34,6 +38,3 @@ Content-Type: application/json
     "turma_id": "2",
     "especialidades": "1"
 }
-
-###
-GET http://localhost:3003/estudantes?nome=martins

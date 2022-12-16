@@ -10,7 +10,7 @@ export class EstudanteDatabase extends DataBasedata {
 
   public async getAllNome(nome: string){
     const result = await DataBasedata.connection.raw(`
-      SELECT nome 
+      SELECT * 
       FROM estudante
       WHERE (nome like "%${nome}%");
   `)
