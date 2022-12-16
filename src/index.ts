@@ -24,7 +24,7 @@ const server = app.listen(process.env.PORT || 3003, () => {
 //endpoint DE TESTE
 app.get("/ping",getPing)
 
-// endpoint buscar estudantes
+// endpoint buscar estudantes ou estudante por nome
 app.get("/estudante",getEstudante)
 
 //ENDPOINT BUSCAR TURMA
@@ -38,6 +38,3 @@ app.get("/docente", getDocente)
 
 //ENDPOINT PARA CRIAR NOVO DOCENTE
 app.post("/docente", createDocente)
-
-//ENDPOINT BUSCAR ESTUDANTE POR NOME
-app.get("/estudantes", getEstudante)

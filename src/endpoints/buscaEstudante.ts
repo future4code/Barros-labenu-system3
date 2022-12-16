@@ -3,18 +3,20 @@ import { EstudanteDatabase } from "../data/EstudanteDatabase"
 
 export const getEstudante = async (req: Request, res: Response) => {
     let errorCode = 400
+    let result;
     try {
         const nome = req.query.nome as string
-
-        if(!nome){
-            errorCode = 404
-            throw new Error("Por Favor passar query!");
-        }
-
         const estudanteDatabase = new EstudanteDatabase()
 
-        const result = await estudanteDatabase.getAllNome(nome)
-        res.status(200).send({ Estudante: result[0] })
+        if(nome){
+            result = await estudanteDatabase.getAllNome(nome)
+            result = result[0]
+        } else {
+            result = await estudanteDatabase.getAll()
+        }
+
+
+        res.status(200).send({ Estudante: result })
     } catch (error: any) {
         res.status(errorCode).send({ message: error.message })
     }
