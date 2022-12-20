@@ -9,7 +9,10 @@ export class TurmaDatabase extends DataBasedata {
   }
 
   public async create(turma: Turma) {
-    await super.create(turma)
+   const result = await super.create(turma)
+    console.log(result);
+    return result;
+    
   }
   
   public async get(id: string) {

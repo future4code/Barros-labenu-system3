@@ -7,6 +7,7 @@ import { getTurma } from "./endpoints/buscaTurmaAtiva";
 import { getDocente } from "./endpoints/buscaDocente";
 import { changeTurma } from "./endpoints/MudaTurmaModulo";
 import { createDocente } from "./endpoints/criaDocente";
+import { createTurma } from "./endpoints/criaTurma";
 
 const app: Express = express();
 
@@ -38,3 +39,6 @@ app.get("/docente", getDocente)
 
 //ENDPOINT PARA CRIAR NOVO DOCENTE
 app.post("/docente", createDocente)
+
+//ENDPOINT PARA CRIAR NOVA TURMA
+app.put("/turma", createTurma)
