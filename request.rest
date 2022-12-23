@@ -15,11 +15,11 @@ GET  http://localhost:3003/turma
 
 ###
 //ENDPOINT DE ALTERAR O MÓDULO DA TURMA
-PUT http://localhost:3003/turma/1
+PUT http://localhost:3003/turma/1671578012508
 Content-Type: application/json
 
 {
-    "modulo": "7"
+    "modulo": "6"
 }
 
 ###
@@ -37,4 +37,14 @@ Content-Type: application/json
     "dataNascimento": "1999-2-15",
     "turma_id": "2",
     "especialidades": "1"
+}
+
+###
+
+//ENDPOINT PARA CRIAR NOVA TURMA
+PUT http://localhost:3003/turma
+Content-Type: application/json
+
+{
+    "nome": "Lamar"
 }
