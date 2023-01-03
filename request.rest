@@ -32,11 +32,11 @@ POST http://localhost:3003/docente
 Content-Type: application/json
 
 {
-    "nome": "Fayra Miranda",
-    "email": "fay@email.com",
+    "nome": "Professor Teste 3",
+    "email": "teste3@email.com",
     "dataNascimento": "1999-2-15",
     "turma_id": "2",
-    "especialidades": "1"
+    "especialidades": ["1", "3"]
 }
 
 ###
@@ -48,3 +48,8 @@ Content-Type: application/json
 {
     "nome": "Lamar"
 }
+
+###
+
+//Exibir tabela especialidades
+GET  http://localhost:3003/especialidades
