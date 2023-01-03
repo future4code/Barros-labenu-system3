@@ -13,6 +13,11 @@ GET http://localhost:3003/estudante?nome=Caroline
 //ENDPOINT BUSCAR TURMA
 GET  http://localhost:3003/turma
 
+
+###
+//ENDPOINT BUSCAR DOCENTE
+GET http://localhost:3003/docente
+
 ###
 //ENDPOINT DE ALTERAR O MÓDULO DA TURMA
 PUT http://localhost:3003/turma/1671578012508
@@ -22,9 +27,6 @@ Content-Type: application/json
     "modulo": "6"
 }
 
-###
-//ENDPOINT BUSCAR DOCENTE
-GET http://localhost:3003/docente
 
 ###
 //ENDPOINT PARA CRIAR UM NOVO DOCENTE
@@ -47,4 +49,18 @@ Content-Type: application/json
 
 {
     "nome": "Lamar"
+}
+
+###
+
+// ENDPOINT PARA CRIAR NOVO ESTUDANTE
+PUT http://localhost:3003/novo_estudante
+Content-Type: application/json
+
+{
+    "nome": "Ane",
+    "email": "ane@labenu.com",
+    "dataNascimento": "2002-02-11",
+    "turma_id": "1",
+    
 }
