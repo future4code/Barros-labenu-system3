@@ -64,7 +64,7 @@ Content-Type: application/json
 ###
 
 //ENDPOINT PARA CRIAR NOVA TURMA
-PUT http://localhost:3003/turma
+POST  http://localhost:3003/turma
 Content-Type: application/json
 
 {

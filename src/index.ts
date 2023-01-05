@@ -45,7 +45,7 @@ app.get("/docente", getDocente)
 app.post("/docente", createDocente)
 
 //ENDPOINT PARA CRIAR NOVA TURMA
-app.put("/turma", createTurma)
+app.post("/turma", createTurma)
 
 //Exibição da Tabela especialidade
 app.get("/especialidades", getEspecialidades)
