@@ -17,31 +17,51 @@ export const createEstudante = async (req: Request, res: Response) => {
             throw new Error("Body inválido.")
         }
 
+        //Lógica para verificar se todos os id's de hobbys existem, se algum não for encontrado já retorna o erro.
+        const buscaHobby = new HobbyDatabase()
+        for (let i = 0; i < hobby.length; i++) {
+            const hobbyId = await buscaHobby.getById(hobby[i]);
+
+            if (hobbyId.length === 0) {
+                throw new Error("Especialidade não encontrada");
+            }
+        }
+
         const estudante = new Estudante(
             Date.now().toString(),
             nome,
             email,
             dataNascimento,
-            turma_id,   
+            turma_id,
             hobby
         );
 
         const estudanteDatabase = new EstudanteDatabase()
-        
+
         const estudanteTabela = {
             id: await estudante.getId(),
             nome: await estudante.getNome(),
             email: await estudante.getEmail(),
             data_nasc: await estudante.getDataNascimento(),
-            turma_id: await estudante.getTurmaId(), 
+            turma_id: await estudante.getTurmaId(),
         }
         console.log(estudanteTabela)
 
         await estudanteDatabase.create(estudanteTabela)
-        
-        
-        res.status(201).send({ message: "Usuário estudante criado", estudante:estudante })
-    } catch (error:any) {
+
+        const hobbies = new HobbyEstudanteDataBase()
+        for (let i = 0; i < hobby.length; i++) {
+            const hobbiesTabela = {
+                id: Date.now().toString(),
+                id_estudante: estudanteTabela.id,
+                id_hobby: hobby[i]
+            }
+            await hobbies.create(hobbiesTabela)
+        }
+
+
+        res.status(201).send({ message: "Usuário estudante criado", estudante: estudante })
+    } catch (error: any) {
         res.status(errorCode).send({ message: error.message })
     }
 }

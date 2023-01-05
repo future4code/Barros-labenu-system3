@@ -9,6 +9,7 @@ import { changeTurma } from "./endpoints/MudaTurmaModulo";
 import { createDocente } from "./endpoints/criaDocente";
 import { createTurma } from "./endpoints/criaTurma";
 import { getEspecialidades } from "./endpoints/buscaEspecialidades";
+import { createEstudante } from "./endpoints/criaEstudante";
 
 const app: Express = express();
 
@@ -46,3 +47,6 @@ app.put("/turma", createTurma)
 
 //Exibição da Tabela especialidade
 app.get("/especialidades", getEspecialidades)
+
+//ENDPOINT PARA CRIAR NOVO ESTUDANTE
+app.post("/estudante", createEstudante)

@@ -53,3 +53,19 @@ Content-Type: application/json
 
 //Exibir tabela especialidades
 GET  http://localhost:3003/especialidades
+
+###
+
+// CRIAR NOVO ESTUDANTE
+POST http://localhost:3003/estudante
+Content-Type: application/json
+
+{
+    "nome": "Aluno TESTE",
+    "email": "teste3@email.com",
+    "dataNascimento": "1999-2-11",
+    "turma_id": "2",
+    "hobby": ["1", "2"]
+}
+
+###
