@@ -10,8 +10,18 @@ GET  http://localhost:3003/estudante
 GET http://localhost:3003/estudante?nome=Caroline
 
 ###
+
+//ENDPOINT BUSCAR DOCENTE
+GET http://localhost:3003/docente
+
+###
 //ENDPOINT BUSCAR TURMA
 GET  http://localhost:3003/turma
+
+###
+
+//Exibir tabela especialidades
+GET  http://localhost:3003/especialidades
 
 ###
 //ENDPOINT DE ALTERAR O MÓDULO DA TURMA
@@ -23,10 +33,7 @@ Content-Type: application/json
 }
 
 ###
-//ENDPOINT BUSCAR DOCENTE
-GET http://localhost:3003/docente
 
-###
 //ENDPOINT PARA CRIAR UM NOVO DOCENTE
 POST http://localhost:3003/docente
 Content-Type: application/json
@@ -48,11 +55,6 @@ Content-Type: application/json
 {
     "nome": "Lamar"
 }
-
-###
-
-//Exibir tabela especialidades
-GET  http://localhost:3003/especialidades
 
 ###
 
