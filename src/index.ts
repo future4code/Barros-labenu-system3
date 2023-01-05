@@ -10,6 +10,7 @@ import { createDocente } from "./endpoints/criaDocente";
 import { createTurma } from "./endpoints/criaTurma";
 import { getEspecialidades } from "./endpoints/buscaEspecialidades";
 import { createEstudante } from "./endpoints/criaEstudante";
+import { changeEstudante } from "./endpoints/MudaEstudanteTurma";
 
 const app: Express = express();
 
@@ -50,3 +51,6 @@ app.get("/especialidades", getEspecialidades)
 
 //ENDPOINT PARA CRIAR NOVO ESTUDANTE
 app.post("/estudante", createEstudante)
+
+//ENDPOINT PARA MUDAR ESTUDANTE DE TURMA
+app.put("/estudante/:id", changeEstudante)
