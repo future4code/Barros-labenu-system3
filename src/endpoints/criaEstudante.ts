@@ -1,6 +1,8 @@
 import { Request, Response } from "express"
 import { EstudanteDatabase } from "../data/EstudanteDatabase"
 import { Estudante } from "../class/Estudante"
+import { HobbyDatabase } from "../data/HobbyDatabase"
+import { HobbyEstudanteDataBase } from "../data/HobbyEstudanteDataBase"
 
 export const createEstudante = async (req: Request, res: Response) => {
     let errorCode = 400
@@ -25,7 +27,17 @@ export const createEstudante = async (req: Request, res: Response) => {
         );
 
         const estudanteDatabase = new EstudanteDatabase()
-        await estudanteDatabase.create(estudante)
+        
+        const estudanteTabela = {
+            id: await estudante.getId(),
+            nome: await estudante.getNome(),
+            email: await estudante.getEmail(),
+            data_nasc: await estudante.getDataNascimento(),
+            turma_id: await estudante.getTurmaId(), 
+        }
+        console.log(estudanteTabela)
+
+        await estudanteDatabase.create(estudanteTabela)
         
         
         res.status(201).send({ message: "Usuário estudante criado", estudante:estudante })
