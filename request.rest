@@ -71,7 +71,7 @@ Content-Type: application/json
 }
 
 ###
-
+//MUDA ESTUDANTE DE TURMA 
 PUT http://localhost:3003/estudante/1
 Content-Type: application/json
 
@@ -80,3 +80,10 @@ Content-Type: application/json
 }
 
 ###
+//MUDAR DOCENTE DE TURMA
+PUT http://localhost:3003/docente/1672952090889
+Content-Type: application/json
+
+{
+    "turma":"2"
+}
