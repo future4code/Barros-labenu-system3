@@ -24,4 +24,9 @@ export class EstudanteDatabase extends DataBasedata {
   public async get(id: string) {
     return super.getById(id)
   }
+
+  public async set (id: string, item:any) {
+    await super.set(id, item)
+  }  
+
 }

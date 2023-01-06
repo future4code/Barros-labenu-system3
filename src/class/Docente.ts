@@ -27,7 +27,7 @@ export class Docente extends Usuario {
   }
 
   public async getDataNascimento() {
-    return this.dataNascimento;
+    return this.dataNascimento
   }
 
   public async getTurmaId() {

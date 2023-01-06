@@ -1,7 +1,7 @@
 import { Request, Response } from "express"
 import { DocenteDatabase } from "../data/DocenteDatabase"
 import { TurmaDatabase } from "../data/TurmaDatabase"
-import connection from "../data/connetion"
+import connection from "../data/connection"
 
 export const changeDocente = async (req: Request, res: Response) => {
     let errorCode = 400
