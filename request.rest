@@ -1,4 +1,4 @@
-//TESTANDOO
+//TESTANDO
 GET  http://localhost:3003/ping
 
 ###
@@ -7,7 +7,7 @@ GET  http://localhost:3003/estudante
 
 ###
 //ENDPOINT PARA BUSCAR UM ESTUDANTE POR NOME
-GET http://localhost:3003/estudante?nome=Caroline
+GET http://localhost:3003/estudante?nome=Bianca
 
 ###
 //ENDPOINT BUSCAR TURMA
@@ -34,7 +34,40 @@ Content-Type: application/json
 {
     "nome": "Fayra Miranda",
     "email": "fay@email.com",
-    "dataNascimento": "1999-2-15",
+    "data_nasc": "1999-2-15",
     "turma_id": "2",
     "especialidades": "1"
 }
+
+###
+//ENDPOINT PARA CRIAR NOVA TURMA
+POST http://localhost:3003/turma
+Content-Type: application/json
+
+{
+        "nome" : "Smith",
+        "docentes" : [],
+        "estudantes": [],
+        "modulo":"7"
+}
+
+###
+//ENDPOINT PARA ALTERAR DOCENTE DE TURMA
+PUT http://localhost:3003/docente/1
+Content-Type: application/json
+
+{
+    "turma": "3"
+}
+
+###
+//ENDPOINT PARA ALTERAR ESTUDANTE DE TURMA
+PUT http://localhost:3003/estudante/1
+Content-Type: application/json
+
+{
+    "turma": "3"
+}
+
+
+
