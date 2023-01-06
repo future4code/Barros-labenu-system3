@@ -79,7 +79,7 @@ PUT http://localhost:3003/estudante/1
 Content-Type: application/json
 
 {
-    "turma": "1"
+    "turma": "2"
 }
 
 ###
