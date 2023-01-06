@@ -26,15 +26,24 @@ Ele deve possuir ao menos 3 entidades importantes que devem existir no código c
 ```
 <br>
 
-## 📋 `Documentação do Postman` - ATUALIZAR O LINK
+## 📋 `Documentação do Postman`
 
-[<sub>Postman</sub>](https://documenter.getpostman.com/view/22363573/2s8Yt1spp7) 
+[<sub>Link do Postman</sub>](https://documenter.getpostman.com/view/24706667/2s8Z73xqeP) 
 
 <br>
 
 
-## 🖇️ `Deploy` - ATUALIZAR O LINK
-[<sub>Render</sub>](https://revisao-modulo5-backend.onrender.com) 
+## 🖇️ `Deploy`
+### Links do Render
+
+[<sub>Turma</sub>](https://labe-systens.onrender.com/turma) 
+
+[<sub>Estudante</sub>](https://labe-systens.onrender.com/estudante) 
+
+[<sub>Docente</sub>](https://labe-systens.onrender.com/docente) 
+
+[<sub>Especialidades</sub>](https://labe-systens.onrender.com/especialidades) 
+
 
 <br>
 
