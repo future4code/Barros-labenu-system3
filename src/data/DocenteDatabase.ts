@@ -8,7 +8,7 @@ export class DocenteDatabase extends DataBasedata {
     return super.getAll()
   }
 
-  public async create(docente: Docente) {
+  public async create(docente: any) {
     await super.create(docente)
   }
   

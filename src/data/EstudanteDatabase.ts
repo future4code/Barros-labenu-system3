@@ -17,7 +17,7 @@ export class EstudanteDatabase extends DataBasedata {
     return result 
   }
 
-  public async create(estudante: Estudante) {
+  public async create(estudante: any) {
     await super.create(estudante)
   }
   
