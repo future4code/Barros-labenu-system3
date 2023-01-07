@@ -22,4 +22,8 @@ export class TurmaDatabase extends DataBasedata {
   public async set (id: string, item:any) {
     await super.set(id, item)
   }
+
+  public async buscaPorTurma(id: string) {
+    return super.buscaPorTurma(id)
+  }
 }

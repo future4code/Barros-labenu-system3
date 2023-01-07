@@ -90,3 +90,7 @@ Content-Type: application/json
 {
     "turma":"2"
 }
+
+###
+//Busca estudantes e docentes de uma turma
+GET http://localhost:3003/turma/1

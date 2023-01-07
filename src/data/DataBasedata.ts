@@ -1,5 +1,6 @@
 import knex from "knex";
 import dotenv from "dotenv"
+import { TABLE_CLASS } from "./tableNames";
 
 dotenv.config();
 export abstract class DataBasedata {
@@ -41,6 +42,26 @@ export abstract class DataBasedata {
       await DataBasedata.connection(this.TABLE_NAME)
       .where({id})
       .update(item)
+    }
+
+    public async buscaPorTurma (id:string) {
+     const docentes = await DataBasedata.connection
+      .raw(
+        `
+        SELECT nome FROM docente
+        WHERE docente.id_turma = ${id};
+        `
+      )
+
+      const estudantes = await DataBasedata.connection
+      .raw(
+        `
+        SELECT nome FROM estudante
+        WHERE estudante.turma_id = ${id};
+        `
+      )
+
+      return {docentes: docentes[0], estudantes: estudantes[0]}
     }
 }
 

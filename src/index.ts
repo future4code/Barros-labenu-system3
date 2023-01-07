@@ -12,6 +12,7 @@ import { getEspecialidades } from "./endpoints/buscaEspecialidades";
 import { createEstudante } from "./endpoints/criaEstudante";
 import { changeEstudante } from "./endpoints/MudaEstudanteTurma";
 import { changeDocente } from "./endpoints/MudaDocenteTurma";
+import { buscaPorTurma } from "./endpoints/buscaPorTurma";
 
 const app: Express = express();
 
@@ -35,6 +36,9 @@ app.get("/estudante",getEstudante)
 //ENDPOINT BUSCAR TURMA
 app.get("/turma",getTurma)
 
+//Busca alunos e docentes de uma turma
+app.get("/turma/:id", buscaPorTurma)
+
 //ENDPOINT MUDAR TURMA DE MÓDULO
 app.put("/turma/:id", changeTurma)
 
@@ -49,6 +53,7 @@ app.post("/turma", createTurma)
 
 //Exibição da Tabela especialidade
 app.get("/especialidades", getEspecialidades)
+
 
 //ENDPOINT PARA CRIAR NOVO ESTUDANTE
 app.post("/estudante", createEstudante)
