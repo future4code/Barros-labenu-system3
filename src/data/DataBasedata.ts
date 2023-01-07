@@ -1,6 +1,7 @@
 import knex from "knex";
 import dotenv from "dotenv"
 import { TABLE_CLASS } from "./tableNames";
+import { docente } from "./dados";
 
 dotenv.config();
 export abstract class DataBasedata {
@@ -45,23 +46,28 @@ export abstract class DataBasedata {
     }
 
     public async buscaPorTurma (id:string) {
-     const docentes = await DataBasedata.connection
-      .raw(
-        `
-        SELECT nome FROM docente
-        WHERE docente.id_turma = ${id};
-        `
-      )
 
-      const estudantes = await DataBasedata.connection
-      .raw(
-        `
-        SELECT nome FROM estudante
-        WHERE estudante.turma_id = ${id};
-        `
-      )
+     const result = await DataBasedata.connection(this.TABLE_NAME)
+     .join('estudante', 'turma.id', '=', 'estudante.turma_id')
+     .join('docente', 'turma.id', '=', 'id_turma')
+     .select('estudante.nome as estudante', 'docente.nome as docente')
+     .where('turma.id', '=', id)
 
-      return {docentes: docentes[0], estudantes: estudantes[0]}
+      const resEstudantes = new Set(result.map((pessoa:any)=> {
+        return pessoa.estudante
+      }))
+
+      const resDocentes = new Set(result.map((pessoa:any)=> {
+        return pessoa.docente
+      }))
+
+      const estudantes = [...resEstudantes]
+      const docentes = [...resDocentes]
+
+      return {
+        docentes: docentes,
+        estudantes: estudantes
+      }
     }
 }
 
