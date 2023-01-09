@@ -12,7 +12,7 @@ Ele deve possuir ao menos 3 entidades importantes que devem existir no código c
 ```
 → Criar estudante
 
-→ Criar estudante
+→ Criar docente
 
 → Criar Turma
 
@@ -20,9 +20,14 @@ Ele deve possuir ao menos 3 entidades importantes que devem existir no código c
 
 → Buscar estudantes através do nome
 
+→ Buscar alunos e docentes de uma turma
+
 → Mudar turma de módulo
 
 → Mudar estudante de turma
+
+→ Mudar docente de turma
+
 ```
 <br>
 
@@ -36,7 +41,7 @@ Ele deve possuir ao menos 3 entidades importantes que devem existir no código c
 ## 🖇️ `Deploy`
 ### Links do Render
 
-[<sub>Turma</sub>](https://labe-systens.onrender.com/turma) 
+[<h2>Turma</h2>](https://labe-systens.onrender.com/turma) 
 
 [<sub>Estudante</sub>](https://labe-systens.onrender.com/estudante) 
 
