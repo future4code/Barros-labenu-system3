@@ -1,5 +1,5 @@
 import { Request, Response } from "express"
-import connection from "../data/connetion"
+import connection from "../data/connection"
 import { EstudanteDatabase } from "../data/EstudanteDatabase"
 import { TurmaDatabase } from "../data/TurmaDatabase"
 

@@ -9,11 +9,11 @@ export const createDocente = async (req: Request, res: Response) => {
     try {
         const nome = req.body.nome
         const email = req.body.email
-        const dataNascimento = req.body.dataNascimento
+        const data_nasc = req.body.data_nasc
         const turma_id = req.body.turma_id
         const especialidades = req.body.especialidades
 
-        if (!nome || !email || !dataNascimento || !turma_id || !especialidades) {
+        if (!nome || !email || !data_nasc || !turma_id || !especialidades) {
             throw new Error("Body inválido.")
         }
 
@@ -31,7 +31,7 @@ export const createDocente = async (req: Request, res: Response) => {
             Date.now().toString(),
             nome,
             email,
-            dataNascimento,
+            data_nasc,
             turma_id,   
             especialidades
         );

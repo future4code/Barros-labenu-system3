@@ -1,4 +1,4 @@
-import connection from "./connetion"
+import connection from "./connection"
 import estudante from "./estudante.json"
 import turma from "./turma.json"
 import hobby from "./hobby.json"
