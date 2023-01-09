@@ -41,7 +41,7 @@ Ele deve possuir ao menos 3 entidades importantes que devem existir no código c
 ## 🖇️ `Deploy`
 ### Links do Render
 
-[<h2>Turma</h2>](https://labe-systens.onrender.com/turma) 
+[<sub>Turma</sub>](https://labe-systens.onrender.com/turma) 
 
 [<sub>Estudante</sub>](https://labe-systens.onrender.com/estudante) 
 
