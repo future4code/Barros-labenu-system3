@@ -1,0 +1,91 @@
+//TESTANDOO 
+GET http://localhost:3003/ping
+
+### //ENDPOINT BUSCAR TODOS OS ESTUDANTES 
+GET http://localhost:3003/estudante
+
+### //ENDPOINT PARA BUSCAR UM ESTUDANTE POR NOME 
+GET http://localhost:3003/estudante?nome=Caroline
+
+###
+
+//ENDPOINT BUSCAR DOCENTE 
+GET http://localhost:3003/docente
+
+### //ENDPOINT BUSCAR TURMA 
+GET http://localhost:3003/turma
+
+###
+
+//Exibir tabela especialidades 
+GET http://localhost:3003/especialidades
+
+###
+
+//ENDPOINT PARA CRIAR UM NOVO DOCENTE 
+POST http://localhost:3003/docente 
+Content-Type: application/json
+
+{
+"nome": "Professor FAY",
+"email": "testANDO@email.com",
+"data_nasc": "1999-2-15", 
+"turma_id": "2", 
+"especialidades": ["1","3"]
+}
+
+###
+
+// CRIAR NOVO ESTUDANTE 
+POST http://localhost:3003/estudante 
+Content-Type: application/json
+
+{
+"nome": "Aluno TESTE", "email": "teste3@email.com", "dataNascimento": "1999-2-11", "turma_id": "2", "hobby": ["1", "2"]
+}
+
+###
+
+//ENDPOINT DE ALTERAR O MÓDULO DA TURMA 
+PUT http://localhost:3003/turma/1671578012508 
+Content-Type: application/json
+
+{
+"modulo": "6"
+}
+
+###
+
+//ENDPOINT PARA CRIAR NOVA TURMA 
+POST http://localhost:3003/turma 
+Content-Type: application/json
+
+{
+"nome": "Lamar"
+}
+
+###
+
+
+//MUDA ESTUDANTE DE TURMA 
+PUT http://localhost:3003/estudante/2 
+Content-Type: application/json
+
+{
+"turma": "1"
+
+}
+
+### //MUDAR DOCENTE DE TURMA 
+PUT http://localhost:3003/docente/1672952090889 
+Content-Type: application/json
+
+{
+
+"turma":"1"
+}
+
+###
+//Busca estudantes e docentes de uma turma
+GET http://localhost:3003/turma/1
+

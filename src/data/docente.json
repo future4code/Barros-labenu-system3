@@ -1,0 +1,16 @@
+[
+    {
+        "id":"1",
+        "nome": "Deia",
+        "email": "deia@labenu.com",
+        "data_nasc": "2022/01/01",
+        "id_turma":"1"
+    },
+    {
+        "id":"2",
+        "nome":"Junior",
+        "email":"juh@labenu.com",
+        "data_nasc":"2022/01/01",
+       "id_turma":"1"
+    }
+]

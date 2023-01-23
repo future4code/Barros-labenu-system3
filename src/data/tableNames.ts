@@ -1,0 +1,7 @@
+export const TABLE_STUDENT = "estudante"
+export const TABLE_CLASS = "turma"
+export const TABLE_INSTRUCTOR = "docente"
+export const TABLE_INSTRUCTOR_SPEC = "docente_especialidade"
+export const TABLE_SPECIALTY = "especialidade"
+export const TABLE_HOBBY = "hobby"
+export const TABLE_HOBBY_STUDENT = "hobbyEstudante"
